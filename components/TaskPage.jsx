@@ -85,6 +85,9 @@ function TaskPage(props) {
               Priorty : <Box component={'span'} sx={{ color: '#A2A2A2' }} >{Item.Priorty}</Box>
             </Typography>
             <Typography variant="h6" sx={{ fontSize: '32px', lineHeight: '40px', color: '#1976d2', textTransform: 'capitalize', mt: 2, fontFamily: 'Ubuntu', }} component="div">
+              Date : <Box component={'span'} sx={{ color: '#A2A2A2' }} >{Item.Date}</Box>
+            </Typography>
+            <Typography variant="h6" sx={{ fontSize: '32px', lineHeight: '40px', color: '#1976d2', textTransform: 'capitalize', mt: 2, fontFamily: 'Ubuntu', }} component="div">
               Description : <Box component={'span'} sx={{ color: '#A2A2A2' }} >{Item.des}</Box>
             </Typography>
             <Typography variant="h6" sx={{ fontSize: '32px', lineHeight: '40px', color: '#1976d2', textTransform: 'capitalize', mt: 2, fontFamily: 'Ubuntu', }} component="div">

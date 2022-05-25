@@ -16,6 +16,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 import IconButton from '@mui/material/IconButton';
 import { Pie, defaults } from 'react-chartjs-2';
 import Zoom from 'react-reveal/Zoom';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -42,6 +45,19 @@ Chart.register(ArcElement);
 function HomePage() {
 
   const { state, dispatch } = useContext(UserContext);
+  const [startDate, setStartDate] = useState(new Date());
+
+  const formateDate = (Date) => {
+    var today = Date;
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+    return today;
+  }
+  console.log(formateDate(startDate));
+
+
   const [RecentAddedTask, setRecentAddedTask] = useState([]);
   useEffect(() => {
     setRecentAddedTask(state.slice(0)
@@ -78,6 +94,7 @@ function HomePage() {
     const NewTask = {
       Task: TaskTitle.trim().toLowerCase(),
       Priorty: Priorty.trim().toLowerCase(),
+      Date: formateDate(startDate),
       isCompleted: Completed,
       des: TaskDes.trim().toLowerCase()
     }
@@ -221,6 +238,30 @@ function HomePage() {
                     <MenuItem value={'low'}>Low</MenuItem>
                   </Select>
                 </FormControl>
+              </Box>
+              <Box sx={{ width: '100%', display: 'flex', justifyContent: 'start', alignItems: 'center' }} >
+                <Typography variant="h6" sx={Validate ? { fontSize: '14px', lineHeight: '20px', color: 'red', textTransform: 'capitalize', fontWeight: 400, ml: 2, mt: 1, fontFamily: 'Ubuntu', } : { display: 'none' }} gutterBottom component="div">
+                  Selection is required
+                </Typography>
+              </Box>
+            </Box>
+            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', mt: 3 }} >
+              <Box sx={{ width: '100%', display: 'flex', justifyContent: 'start', alignItems: 'center' }} >
+                <Typography variant="h6" sx={{
+                  fontSize: '20px', lineHeight: '28px', color: '#666666', textTransform: 'capitalize', ml: {
+                    sm: 2
+                  }, fontFamily: 'Ubuntu',
+                }} gutterBottom component="div">
+                  Date
+                </Typography>
+              </Box>
+              <Box sx={{ width: '100%', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                <DatePicker
+                  // dateFormat="dd/mm/yyyy "
+                  // selected={startDate}
+                  value={formateDate(startDate)}
+                  onChange={(date) => setStartDate(date)}
+                />
               </Box>
               <Box sx={{ width: '100%', display: 'flex', justifyContent: 'start', alignItems: 'center' }} >
                 <Typography variant="h6" sx={Validate ? { fontSize: '14px', lineHeight: '20px', color: 'red', textTransform: 'capitalize', fontWeight: 400, ml: 2, mt: 1, fontFamily: 'Ubuntu', } : { display: 'none' }} gutterBottom component="div">
