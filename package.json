@@ -15,7 +15,6 @@
     "@date-io/moment": "^2.14.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^5.8.0",
     "@mui/lab": "^5.0.0-alpha.83",
     "@mui/material": "^5.8.0",
