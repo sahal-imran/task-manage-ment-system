@@ -28,7 +28,6 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "18.1.0",
     "react-modern-drawer": "^1.1.1",
-    "react-reveal": "^1.2.2",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

@@ -16,7 +16,6 @@ import LockResetOutlinedIcon from "@mui/icons-material/LockResetOutlined";
 import Checkbox from "@mui/material/Checkbox";
 import CircleIcon from "@mui/icons-material/Circle";
 import LoginIcon from "@mui/icons-material/Login";
-import Zoom from "react-reveal/Zoom";
 import { useRouter } from "next/router";
 
 function TabPanel(props) {
@@ -236,16 +235,82 @@ function SwitchTabsForAuthView() {
           </Box>
         </Box>
         <TabPanel style={{ width: "100%" }} value={value} index={0}>
-          <Zoom cascade>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: "28px",
+                lineHeight: "32px",
+                color: "#A2A2A2",
+                textTransform: "capitalize",
+                mt: 2,
+              }}
+              component="div"
+            >
+              Welcome!
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                textTransform: "capitalize",
+                borderRadius: "30px",
+                fontSize: "16px",
+                px: 4,
+                py: 1,
+                mt: 3,
+                borderColor: "#A2A2A2",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "270px",
+              }}
+            >
+              <GoogleIcon sx={{ mr: 1 }} />
+              Signup with Google
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                textTransform: "capitalize",
+                borderRadius: "30px",
+                fontSize: "16px",
+                px: 4,
+                py: 1,
+                mt: 1,
+                borderColor: "#A2A2A2",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "270px",
+              }}
+            >
+              <FacebookIcon sx={{ mr: 1 }} />
+              Signup with Facebook
+            </Button>
             <Box
               sx={{
                 width: "100%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column",
+                my: 3,
               }}
             >
+              <Box
+                sx={{
+                  width: "200px",
+                  height: "1px",
+                  backgroundColor: "#1976d2",
+                }}
+              ></Box>
               <Typography
                 variant="h6"
                 sx={{
@@ -253,93 +318,35 @@ function SwitchTabsForAuthView() {
                   lineHeight: "32px",
                   color: "#A2A2A2",
                   textTransform: "capitalize",
-                  mt: 2,
+                  mx: 1,
                 }}
                 component="div"
               >
-                Welcome!
+                OR
               </Typography>
-              <Button
-                variant="contained"
+              <Box
                 sx={{
-                  textTransform: "capitalize",
-                  borderRadius: "30px",
-                  fontSize: "16px",
-                  px: 4,
-                  py: 1,
-                  mt: 3,
-                  borderColor: "#A2A2A2",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "270px",
+                  width: "200px",
+                  height: "1px",
+                  backgroundColor: "#1976d2",
                 }}
-              >
-                <GoogleIcon sx={{ mr: 1 }} />
-                Signup with Google
-              </Button>
-              <Button
-                variant="contained"
-                sx={{
-                  textTransform: "capitalize",
-                  borderRadius: "30px",
-                  fontSize: "16px",
-                  px: 4,
-                  py: 1,
-                  mt: 1,
-                  borderColor: "#A2A2A2",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "270px",
-                }}
-              >
-                <FacebookIcon sx={{ mr: 1 }} />
-                Signup with Facebook
-              </Button>
+              ></Box>
+            </Box>
+            <Box
+              sx={{
+                width: {
+                  md: "50%",
+                  xs: "100%",
+                },
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
               <Box
                 sx={{
                   width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  my: 3,
-                }}
-              >
-                <Box
-                  sx={{
-                    width: "200px",
-                    height: "1px",
-                    backgroundColor: "#1976d2",
-                  }}
-                ></Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: "28px",
-                    lineHeight: "32px",
-                    color: "#A2A2A2",
-                    textTransform: "capitalize",
-                    mx: 1,
-                  }}
-                  component="div"
-                >
-                  OR
-                </Typography>
-                <Box
-                  sx={{
-                    width: "200px",
-                    height: "1px",
-                    backgroundColor: "#1976d2",
-                  }}
-                ></Box>
-              </Box>
-              <Box
-                sx={{
-                  width: {
-                    md: "50%",
-                    xs: "100%",
-                  },
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -350,848 +357,97 @@ function SwitchTabsForAuthView() {
                   sx={{
                     width: "100%",
                     display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Email address
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <MailOutlineIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={Email}
-                        onChange={(e) =>
-                          setEmail(e.target.value.toLocaleLowerCase())
-                        }
-                        type="email"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                        }}
-                        placeholder="Enter your email"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Email Address required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        EmailValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Email Address required
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  className="Input"
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    mt: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Phone No.
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <PhoneIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={PhNo}
-                        onChange={(e) => setPhNo(e.target.value)}
-                        autoComplete="off"
-                        type="text"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                          color: "#666666",
-                        }}
-                        placeholder="Enter your ph no."
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Phone required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        PhNoValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Phone required
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  className="Input"
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    mt: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Username
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <PersonIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={Username}
-                        onChange={(e) =>
-                          setUsername(e.target.value.toLocaleLowerCase())
-                        }
-                        autoComplete="off"
-                        type="text"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                          color: "#666666",
-                        }}
-                        placeholder="Enter your username"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Username required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        UsernameValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Username required
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  className="Input"
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    mt: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Password
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <LockOutlinedIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={Password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        autoComplete="off"
-                        type="password"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                          color: "#666666",
-                        }}
-                        placeholder="Enter your password"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Password required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        PasswordValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Password required
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  className="Input"
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    mt: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Confirm password
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <LockResetOutlinedIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={ConfirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        autoComplete="off"
-                        type="password"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                          color: "#666666",
-                        }}
-                        placeholder="Re-enter password"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Confirmation required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        ConfirmPasswordValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Confirmation required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        PasswordNotMatches
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Password not matches
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  sx={{
-                    width: "100%",
-                    display: "flex",
                     justifyContent: "start",
                     alignItems: "center",
-                    mt: 3,
                   }}
                 >
-                  <Checkbox
-                    onChange={(e) => SetCheck(e.target.checked)}
-                    icon={
-                      <CircleIcon
-                        sx={{
-                          border: "1px solid #A2A2A2",
-                          borderRadius: "50%",
-                          color: "white",
-                          width: "16px",
-                          height: "16px",
-                          lineHeight: "24px",
-                        }}
-                      />
-                    }
-                    checkedIcon={
-                      <CircleIcon
-                        sx={{
-                          border: "1px solid #C1C1C1",
-                          borderRadius: "50%",
-                          color: "#80ACF5",
-                          width: "16px",
-                          height: "16px",
-                          lineHeight: "24px",
-                        }}
-                      />
-                    }
-                  />
                   <Typography
                     variant="h6"
                     sx={{
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "28px",
                       color: "#666666",
                       textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
                     }}
+                    gutterBottom
                     component="div"
                   >
-                    I agree to Terms of Services
+                    Email address
                   </Typography>
                 </Box>
                 <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
+                    sx={{
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <MailOutlineIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={Email}
+                      onChange={(e) =>
+                        setEmail(e.target.value.toLocaleLowerCase())
+                      }
+                      type="email"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                      }}
+                      placeholder="Enter your email"
+                    />
+                  </Box>
+                </Box>
+                <Box
                   sx={{
                     width: "100%",
                     display: "flex",
@@ -1202,91 +458,898 @@ function SwitchTabsForAuthView() {
                   <Typography
                     variant="h6"
                     sx={
-                      CheckBox
+                      Validate
                         ? {
                             fontSize: "14px",
                             lineHeight: "20px",
                             color: "red",
                             textTransform: "capitalize",
                             fontWeight: 400,
-                            textAlign: "start",
+                            ml: 2,
+                            mt: 1,
                           }
                         : { display: "none" }
                     }
                     gutterBottom
                     component="div"
                   >
-                    Please check Terms of service checkbox to proceed
+                    Email Address required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      EmailValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Email Address required
                   </Typography>
                 </Box>
+              </Box>
+              <Box
+                className="Input"
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  mt: 3,
+                }}
+              >
                 <Box
                   sx={{
+                    width: "100%",
                     display: "flex",
                     justifyContent: "start",
                     alignItems: "center",
-                    mt: 2,
                   }}
                 >
                   <Typography
                     variant="h6"
                     sx={{
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "28px",
                       color: "#666666",
                       textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
                     }}
+                    gutterBottom
                     component="div"
                   >
-                    Already have an account?
+                    Phone No.
                   </Typography>
-                  <Button
-                    onClick={() => setValue(1)}
-                    variant="text"
+                </Box>
+                <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
                     sx={{
-                      textTransform: "capitalize",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      color: "#666666",
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
                     }}
                   >
-                    Login
-                  </Button>
+                    <PhoneIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={PhNo}
+                      onChange={(e) => setPhNo(e.target.value)}
+                      autoComplete="off"
+                      type="text"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                        color: "#666666",
+                      }}
+                      placeholder="Enter your ph no."
+                    />
+                  </Box>
                 </Box>
-                <Button
-                  onClick={() => SignUp()}
-                  variant="contained"
+                <Box
                   sx={{
-                    textTransform: "capitalize",
-                    borderRadius: "30px",
-                    fontSize: "16px",
-                    px: 4,
-                    py: 1,
-                    borderColor: "#A2A2A2",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
                     width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
                   }}
                 >
-                  <LoginIcon sx={{ mr: 1 }} />
-                  Sign Up
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Validate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Phone required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      PhNoValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Phone required
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                className="Input"
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  mt: 3,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontSize: "20px",
+                      lineHeight: "28px",
+                      color: "#666666",
+                      textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
+                    }}
+                    gutterBottom
+                    component="div"
+                  >
+                    Username
+                  </Typography>
+                </Box>
+                <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
+                    sx={{
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PersonIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={Username}
+                      onChange={(e) =>
+                        setUsername(e.target.value.toLocaleLowerCase())
+                      }
+                      autoComplete="off"
+                      type="text"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                        color: "#666666",
+                      }}
+                      placeholder="Enter your username"
+                    />
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Validate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Username required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      UsernameValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Username required
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                className="Input"
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  mt: 3,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontSize: "20px",
+                      lineHeight: "28px",
+                      color: "#666666",
+                      textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
+                    }}
+                    gutterBottom
+                    component="div"
+                  >
+                    Password
+                  </Typography>
+                </Box>
+                <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
+                    sx={{
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <LockOutlinedIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={Password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      autoComplete="off"
+                      type="password"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                        color: "#666666",
+                      }}
+                      placeholder="Enter your password"
+                    />
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Validate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Password required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      PasswordValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Password required
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                className="Input"
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  mt: 3,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontSize: "20px",
+                      lineHeight: "28px",
+                      color: "#666666",
+                      textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
+                    }}
+                    gutterBottom
+                    component="div"
+                  >
+                    Confirm password
+                  </Typography>
+                </Box>
+                <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
+                    sx={{
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <LockResetOutlinedIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={ConfirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      autoComplete="off"
+                      type="password"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                        color: "#666666",
+                      }}
+                      placeholder="Re-enter password"
+                    />
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Validate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Confirmation required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      ConfirmPasswordValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Confirmation required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      PasswordNotMatches
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Password not matches
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  mt: 3,
+                }}
+              >
+                <Checkbox
+                  onChange={(e) => SetCheck(e.target.checked)}
+                  icon={
+                    <CircleIcon
+                      sx={{
+                        border: "1px solid #A2A2A2",
+                        borderRadius: "50%",
+                        color: "white",
+                        width: "16px",
+                        height: "16px",
+                        lineHeight: "24px",
+                      }}
+                    />
+                  }
+                  checkedIcon={
+                    <CircleIcon
+                      sx={{
+                        border: "1px solid #C1C1C1",
+                        borderRadius: "50%",
+                        color: "#80ACF5",
+                        width: "16px",
+                        height: "16px",
+                        lineHeight: "24px",
+                      }}
+                    />
+                  }
+                />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    fontWeight: 400,
+                    color: "#666666",
+                    textTransform: "capitalize",
+                  }}
+                  component="div"
+                >
+                  I agree to Terms of Services
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "start",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={
+                    CheckBox
+                      ? {
+                          fontSize: "14px",
+                          lineHeight: "20px",
+                          color: "red",
+                          textTransform: "capitalize",
+                          fontWeight: 400,
+                          textAlign: "start",
+                        }
+                      : { display: "none" }
+                  }
+                  gutterBottom
+                  component="div"
+                >
+                  Please check Terms of service checkbox to proceed
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  mt: 2,
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    fontWeight: 400,
+                    color: "#666666",
+                    textTransform: "capitalize",
+                  }}
+                  component="div"
+                >
+                  Already have an account?
+                </Typography>
+                <Button
+                  onClick={() => setValue(1)}
+                  variant="text"
+                  sx={{
+                    textTransform: "capitalize",
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    color: "#666666",
+                  }}
+                >
+                  Login
                 </Button>
               </Box>
+              <Button
+                onClick={() => SignUp()}
+                variant="contained"
+                sx={{
+                  textTransform: "capitalize",
+                  borderRadius: "30px",
+                  fontSize: "16px",
+                  px: 4,
+                  py: 1,
+                  borderColor: "#A2A2A2",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <LoginIcon sx={{ mr: 1 }} />
+                Sign Up
+              </Button>
             </Box>
-          </Zoom>
+          </Box>
         </TabPanel>
         <TabPanel style={{ width: "100%" }} value={value} index={1}>
-          <Zoom cascade>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: "28px",
+                lineHeight: "32px",
+                color: "#A2A2A2",
+                textTransform: "capitalize",
+                mt: 2,
+              }}
+              component="div"
+            >
+              Wellcome!
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                textTransform: "capitalize",
+                borderRadius: "30px",
+                fontSize: "16px",
+                px: 4,
+                py: 1,
+                mt: 3,
+                borderColor: "#A2A2A2",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "270px",
+              }}
+            >
+              <GoogleIcon sx={{ mr: 1 }} />
+              Signup with Google
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                textTransform: "capitalize",
+                borderRadius: "30px",
+                fontSize: "16px",
+                px: 4,
+                py: 1,
+                mt: 1,
+                borderColor: "#A2A2A2",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "270px",
+              }}
+            >
+              <FacebookIcon sx={{ mr: 1 }} />
+              Signup with Facebook
+            </Button>
             <Box
               sx={{
                 width: "100%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column",
+                my: 3,
               }}
             >
+              <Box
+                sx={{
+                  width: "200px",
+                  height: "1px",
+                  backgroundColor: "#1976d2",
+                }}
+              ></Box>
               <Typography
                 variant="h6"
                 sx={{
@@ -1294,93 +1357,35 @@ function SwitchTabsForAuthView() {
                   lineHeight: "32px",
                   color: "#A2A2A2",
                   textTransform: "capitalize",
-                  mt: 2,
+                  mx: 1,
                 }}
                 component="div"
               >
-                Wellcome!
+                OR
               </Typography>
-              <Button
-                variant="contained"
+              <Box
                 sx={{
-                  textTransform: "capitalize",
-                  borderRadius: "30px",
-                  fontSize: "16px",
-                  px: 4,
-                  py: 1,
-                  mt: 3,
-                  borderColor: "#A2A2A2",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "270px",
+                  width: "200px",
+                  height: "1px",
+                  backgroundColor: "#1976d2",
                 }}
-              >
-                <GoogleIcon sx={{ mr: 1 }} />
-                Signup with Google
-              </Button>
-              <Button
-                variant="contained"
-                sx={{
-                  textTransform: "capitalize",
-                  borderRadius: "30px",
-                  fontSize: "16px",
-                  px: 4,
-                  py: 1,
-                  mt: 1,
-                  borderColor: "#A2A2A2",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "270px",
-                }}
-              >
-                <FacebookIcon sx={{ mr: 1 }} />
-                Signup with Facebook
-              </Button>
+              ></Box>
+            </Box>
+            <Box
+              sx={{
+                width: {
+                  md: "50%",
+                  xs: "100%",
+                },
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
               <Box
                 sx={{
                   width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  my: 3,
-                }}
-              >
-                <Box
-                  sx={{
-                    width: "200px",
-                    height: "1px",
-                    backgroundColor: "#1976d2",
-                  }}
-                ></Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: "28px",
-                    lineHeight: "32px",
-                    color: "#A2A2A2",
-                    textTransform: "capitalize",
-                    mx: 1,
-                  }}
-                  component="div"
-                >
-                  OR
-                </Typography>
-                <Box
-                  sx={{
-                    width: "200px",
-                    height: "1px",
-                    backgroundColor: "#1976d2",
-                  }}
-                ></Box>
-              </Box>
-              <Box
-                sx={{
-                  width: {
-                    md: "50%",
-                    xs: "100%",
-                  },
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -1391,387 +1396,377 @@ function SwitchTabsForAuthView() {
                   sx={{
                     width: "100%",
                     display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Email or Username
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <MailOutlineIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={Email}
-                        onChange={(e) =>
-                          setEmail(e.target.value.toLocaleLowerCase())
-                        }
-                        type="email"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                          color: "#666666",
-                        }}
-                        placeholder="Enter your email or username"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Email Address required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        EmailValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Email Address required
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  className="Input"
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    mt: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontSize: "20px",
-                        lineHeight: "28px",
-                        color: "#666666",
-                        textTransform: "capitalize",
-                        ml: {
-                          sm: 2,
-                        },
-                      }}
-                      gutterBottom
-                      component="div"
-                    >
-                      Password
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={
-                      Validate
-                        ? {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid red",
-                            px: 1,
-                          }
-                        : {
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "20px",
-                            border: "1px solid #666666",
-                            px: 1,
-                          }
-                    }
-                  >
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: {
-                          sm: "5%",
-                          xs: "10%",
-                        },
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <LockOutlinedIcon
-                        sx={Validate ? { color: "red" } : { color: "#666666" }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "92%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <input
-                        onFocus={() => focus()}
-                        value={Password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        autoComplete="off"
-                        type="password"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          outline: "none",
-                          border: "unset",
-                          fontSize: "16px",
-                          lineHeight: "24px",
-                          padding: "0px 4px",
-                          color: "#666666",
-                        }}
-                        placeholder="Enter your password"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Validate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Password required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        PasswordValidate
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Password required
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={
-                        Auth
-                          ? {
-                              fontSize: "14px",
-                              lineHeight: "20px",
-                              color: "red",
-                              textTransform: "capitalize",
-                              fontWeight: 400,
-                              ml: 2,
-                              mt: 1,
-                            }
-                          : { display: "none" }
-                      }
-                      gutterBottom
-                      component="div"
-                    >
-                      Invalid username or password
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
                     justifyContent: "start",
                     alignItems: "center",
-                    mt: 2,
                   }}
                 >
                   <Typography
                     variant="h6"
                     sx={{
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "28px",
                       color: "#666666",
                       textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
                     }}
+                    gutterBottom
                     component="div"
                   >
-                    have an account?
+                    Email or Username
                   </Typography>
-                  <Button
-                    onClick={() => setValue(0)}
-                    variant="text"
+                </Box>
+                <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
                     sx={{
-                      textTransform: "capitalize",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      color: "#666666",
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
                     }}
                   >
-                    Signup
-                  </Button>
+                    <MailOutlineIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={Email}
+                      onChange={(e) =>
+                        setEmail(e.target.value.toLocaleLowerCase())
+                      }
+                      type="email"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                        color: "#666666",
+                      }}
+                      placeholder="Enter your email or username"
+                    />
+                  </Box>
                 </Box>
-                <Button
-                  onClick={() => Login()}
-                  variant="contained"
+                <Box
                   sx={{
-                    textTransform: "capitalize",
-                    borderRadius: "30px",
-                    fontSize: "16px",
-                    px: 4,
-                    py: 1,
-                    borderColor: "#A2A2A2",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
                     width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
                   }}
                 >
-                  <LoginIcon sx={{ mr: 1 }} />
-                  Login
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Validate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Email Address required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      EmailValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Email Address required
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                className="Input"
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  mt: 3,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontSize: "20px",
+                      lineHeight: "28px",
+                      color: "#666666",
+                      textTransform: "capitalize",
+                      ml: {
+                        sm: 2,
+                      },
+                    }}
+                    gutterBottom
+                    component="div"
+                  >
+                    Password
+                  </Typography>
+                </Box>
+                <Box
+                  sx={
+                    Validate
+                      ? {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid red",
+                          px: 1,
+                        }
+                      : {
+                          width: "100%",
+                          height: "40px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "20px",
+                          border: "1px solid #666666",
+                          px: 1,
+                        }
+                  }
+                >
+                  <Box
+                    sx={{
+                      height: "100%",
+                      width: {
+                        sm: "5%",
+                        xs: "10%",
+                      },
+                      display: "flex",
+                      justifyContent: "start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <LockOutlinedIcon
+                      sx={Validate ? { color: "red" } : { color: "#666666" }}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      width: "92%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      onFocus={() => focus()}
+                      value={Password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      autoComplete="off"
+                      type="password"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        outline: "none",
+                        border: "unset",
+                        fontSize: "16px",
+                        lineHeight: "24px",
+                        padding: "0px 4px",
+                        color: "#666666",
+                      }}
+                      placeholder="Enter your password"
+                    />
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "start",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Validate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Password required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      PasswordValidate
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Password required
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={
+                      Auth
+                        ? {
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            color: "red",
+                            textTransform: "capitalize",
+                            fontWeight: 400,
+                            ml: 2,
+                            mt: 1,
+                          }
+                        : { display: "none" }
+                    }
+                    gutterBottom
+                    component="div"
+                  >
+                    Invalid username or password
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  mt: 2,
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    fontWeight: 400,
+                    color: "#666666",
+                    textTransform: "capitalize",
+                  }}
+                  component="div"
+                >
+                  have an account?
+                </Typography>
+                <Button
+                  onClick={() => setValue(0)}
+                  variant="text"
+                  sx={{
+                    textTransform: "capitalize",
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    color: "#666666",
+                  }}
+                >
+                  Signup
                 </Button>
               </Box>
+              <Button
+                onClick={() => Login()}
+                variant="contained"
+                sx={{
+                  textTransform: "capitalize",
+                  borderRadius: "30px",
+                  fontSize: "16px",
+                  px: 4,
+                  py: 1,
+                  borderColor: "#A2A2A2",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <LoginIcon sx={{ mr: 1 }} />
+                Login
+              </Button>
             </Box>
-          </Zoom>
+          </Box>
         </TabPanel>
       </Container>
     </Box>

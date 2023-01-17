@@ -16,7 +16,6 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
 import { Pie, defaults } from "react-chartjs-2";
-import Zoom from "react-reveal/Zoom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
@@ -147,399 +146,398 @@ function HomePage() {
   };
 
   return (
-    <Zoom cascade>
+    <Box
+      sx={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        py: 2,
+        flexDirection: "column",
+      }}
+    >
       <Box
         sx={{
-          width: "100%",
+          width: "70%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          py: 2,
+          height: "60px",
+          borderRadius: "50px",
+          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.05)",
+          mb: 3,
+          backgroundColor: "#1976d2",
+        }}
+      >
+        <Link href={"/homepage"}>
+          <a className="a">Homepage</a>
+        </Link>
+        <Link href={"/taskpage"}>
+          <a className="a">Taskpage</a>
+        </Link>
+      </Box>
+      <Container
+        maxWidth="lg"
+        sx={{
+          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.05)",
+          display: "flex",
+          justifyContent: "start",
+          alignItems: "center",
           flexDirection: "column",
+          borderRadius: {
+            md: "12px",
+          },
+          minHeight: "100vh",
+          p: 0,
+          overflow: "hidden",
         }}
       >
         <Box
           sx={{
-            width: "70%",
+            backgroundColor: {
+              md: "#1976d2",
+              xs: "none",
+            },
+            width: "100%",
+            miHeight: "70px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: "60px",
-            borderRadius: "50px",
-            boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.05)",
-            mb: 3,
-            backgroundColor: "#1976d2",
+            p: 1,
           }}
         >
-          <Link href={"/homepage"}>
-            <a className="a">Homepage</a>
-          </Link>
-          <Link href={"/taskpage"}>
-            <a className="a">Taskpage</a>
-          </Link>
+          <Typography
+            variant="h6"
+            sx={{
+              fontSize: "28px",
+              lineHeight: "32px",
+              color: {
+                md: "white",
+                xs: "#666666",
+              },
+              textTransform: "capitalize",
+              fontWeight: 400,
+              textAlign: "center",
+              fontFamily: "Ubuntu",
+            }}
+            component="div"
+          >
+            welcome to task management system!
+          </Typography>
         </Box>
-        <Container
-          maxWidth="lg"
+        <Box
           sx={{
-            boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.05)",
+            width: {
+              md: "50%",
+              xs: "100%",
+            },
+            mt: 6,
             display: "flex",
             justifyContent: "start",
             alignItems: "center",
             flexDirection: "column",
-            borderRadius: {
-              md: "12px",
-            },
-            minHeight: "100vh",
-            p: 0,
-            overflow: "hidden",
+            px: 2,
           }}
         >
           <Box
             sx={{
-              backgroundColor: {
-                md: "#1976d2",
-                xs: "none",
-              },
               width: "100%",
-              miHeight: "70px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              p: 1,
+              flexDirection: "column",
             }}
           >
-            <Typography
-              variant="h6"
+            <Box
               sx={{
-                fontSize: "28px",
-                lineHeight: "32px",
-                color: {
-                  md: "white",
-                  xs: "#666666",
-                },
-                textTransform: "capitalize",
-                fontWeight: 400,
-                textAlign: "center",
-                fontFamily: "Ubuntu",
+                width: "100%",
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "center",
               }}
-              component="div"
             >
-              welcome to task management system!
-            </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  color: "#666666",
+                  textTransform: "capitalize",
+                  ml: {
+                    sm: 2,
+                  },
+                  fontFamily: "Ubuntu",
+                }}
+                gutterBottom
+                component="div"
+              >
+                Task title
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                height: "40px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "20px",
+                border: "1px solid #666666",
+                px: 1,
+              }}
+            >
+              <Box
+                sx={{
+                  height: "100%",
+                  width: {
+                    sm: "5%",
+                    xs: "10%",
+                  },
+                  display: "flex",
+                  justifyContent: "start",
+                  alignItems: "center",
+                }}
+              >
+                <AssignmentIcon sx={{ color: "#666666" }} />
+              </Box>
+              <Box
+                sx={{
+                  width: "92%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <input
+                  value={TaskTitle}
+                  onChange={(e) => setTaskTitle(e.target.value)}
+                  type="email"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    outline: "none",
+                    border: "unset",
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    padding: "0px 4px",
+                    color: "#666666",
+                  }}
+                  placeholder="Enter task title here..."
+                />
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={
+                  Validate
+                    ? {
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "red",
+                        textTransform: "capitalize",
+                        fontWeight: 400,
+                        ml: 2,
+                        mt: 1,
+                        fontFamily: "Ubuntu",
+                      }
+                    : { display: "none" }
+                }
+                gutterBottom
+                component="div"
+              >
+                Title is required
+              </Typography>
+            </Box>
           </Box>
           <Box
             sx={{
-              width: {
-                md: "50%",
-                xs: "100%",
-              },
-              mt: 6,
+              width: "100%",
               display: "flex",
-              justifyContent: "start",
+              justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
-              px: 2,
+              mt: 3,
             }}
           >
             <Box
               sx={{
                 width: "100%",
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "start",
                 alignItems: "center",
-                flexDirection: "column",
               }}
             >
-              <Box
+              <Typography
+                variant="h6"
                 sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  color: "#666666",
+                  textTransform: "capitalize",
+                  ml: {
+                    sm: 2,
+                  },
+                  fontFamily: "Ubuntu",
                 }}
+                gutterBottom
+                component="div"
               >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: "20px",
-                    lineHeight: "28px",
-                    color: "#666666",
-                    textTransform: "capitalize",
-                    ml: {
-                      sm: 2,
-                    },
-                    fontFamily: "Ubuntu",
-                  }}
-                  gutterBottom
-                  component="div"
-                >
-                  Task title
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "40px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "20px",
-                  border: "1px solid #666666",
-                  px: 1,
-                }}
+                Task priority
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                height: "40px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <FormControl
+                sx={{ borderRadius: "20px", height: "40px" }}
+                fullWidth
               >
-                <Box
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={Priorty}
+                  onChange={handleChange}
                   sx={{
-                    height: "100%",
-                    width: {
-                      sm: "5%",
-                      xs: "10%",
-                    },
-                    display: "flex",
-                    justifyContent: "start",
-                    alignItems: "center",
+                    borderRadius: "20px",
+                    border: "unset",
+                    height: "40px",
                   }}
                 >
-                  <AssignmentIcon sx={{ color: "#666666" }} />
-                </Box>
-                <Box
-                  sx={{
-                    width: "92%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <input
-                    value={TaskTitle}
-                    onChange={(e) => setTaskTitle(e.target.value)}
-                    type="email"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      outline: "none",
-                      border: "unset",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      padding: "0px 4px",
-                      color: "#666666",
-                    }}
-                    placeholder="Enter task title here..."
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={
-                    Validate
-                      ? {
-                          fontSize: "14px",
-                          lineHeight: "20px",
-                          color: "red",
-                          textTransform: "capitalize",
-                          fontWeight: 400,
-                          ml: 2,
-                          mt: 1,
-                          fontFamily: "Ubuntu",
-                        }
-                      : { display: "none" }
-                  }
-                  gutterBottom
-                  component="div"
-                >
-                  Title is required
-                </Typography>
-              </Box>
+                  <MenuItem value={"highest"}>Highest</MenuItem>
+                  <MenuItem value={"normal"}>Normal</MenuItem>
+                  <MenuItem value={"low"}>Low</MenuItem>
+                </Select>
+              </FormControl>
             </Box>
             <Box
               sx={{
                 width: "100%",
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "start",
                 alignItems: "center",
-                flexDirection: "column",
-                mt: 3,
               }}
             >
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
+              <Typography
+                variant="h6"
+                sx={
+                  Validate
+                    ? {
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "red",
+                        textTransform: "capitalize",
+                        fontWeight: 400,
+                        ml: 2,
+                        mt: 1,
+                        fontFamily: "Ubuntu",
+                      }
+                    : { display: "none" }
+                }
+                gutterBottom
+                component="div"
               >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: "20px",
-                    lineHeight: "28px",
-                    color: "#666666",
-                    textTransform: "capitalize",
-                    ml: {
-                      sm: 2,
-                    },
-                    fontFamily: "Ubuntu",
-                  }}
-                  gutterBottom
-                  component="div"
-                >
-                  Task priority
-                </Typography>
-              </Box>
-              <Box
+                Selection is required
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              mt: 3,
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h6"
                 sx={{
-                  width: "100%",
-                  height: "40px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  color: "#666666",
+                  textTransform: "capitalize",
+                  ml: {
+                    sm: 2,
+                  },
+                  fontFamily: "Ubuntu",
                 }}
+                gutterBottom
+                component="div"
               >
-                <FormControl
-                  sx={{ borderRadius: "20px", height: "40px" }}
-                  fullWidth
-                >
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={Priorty}
-                    onChange={handleChange}
-                    sx={{
-                      borderRadius: "20px",
-                      border: "unset",
-                      height: "40px",
-                    }}
-                  >
-                    <MenuItem value={"highest"}>Highest</MenuItem>
-                    <MenuItem value={"normal"}>Normal</MenuItem>
-                    <MenuItem value={"low"}>Low</MenuItem>
-                  </Select>
-                </FormControl>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={
-                    Validate
-                      ? {
-                          fontSize: "14px",
-                          lineHeight: "20px",
-                          color: "red",
-                          textTransform: "capitalize",
-                          fontWeight: 400,
-                          ml: 2,
-                          mt: 1,
-                          fontFamily: "Ubuntu",
-                        }
-                      : { display: "none" }
-                  }
-                  gutterBottom
-                  component="div"
-                >
-                  Selection is required
-                </Typography>
-              </Box>
+                Date
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                height: "40px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <DatePicker
+                // dateFormat="dd/mm/yyyy "
+                // selected={startDate}
+                value={formateDate(startDate)}
+                onChange={(date) => setStartDate(date)}
+              />
             </Box>
             <Box
               sx={{
                 width: "100%",
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "start",
                 alignItems: "center",
-                flexDirection: "column",
-                mt: 3,
               }}
             >
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
+              <Typography
+                variant="h6"
+                sx={
+                  Validate
+                    ? {
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "red",
+                        textTransform: "capitalize",
+                        fontWeight: 400,
+                        ml: 2,
+                        mt: 1,
+                        fontFamily: "Ubuntu",
+                      }
+                    : { display: "none" }
+                }
+                gutterBottom
+                component="div"
               >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: "20px",
-                    lineHeight: "28px",
-                    color: "#666666",
-                    textTransform: "capitalize",
-                    ml: {
-                      sm: 2,
-                    },
-                    fontFamily: "Ubuntu",
-                  }}
-                  gutterBottom
-                  component="div"
-                >
-                  Date
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "40px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <DatePicker
-                  // dateFormat="dd/mm/yyyy "
-                  // selected={startDate}
-                  value={formateDate(startDate)}
-                  onChange={(date) => setStartDate(date)}
-                />
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={
-                    Validate
-                      ? {
-                          fontSize: "14px",
-                          lineHeight: "20px",
-                          color: "red",
-                          textTransform: "capitalize",
-                          fontWeight: 400,
-                          ml: 2,
-                          mt: 1,
-                          fontFamily: "Ubuntu",
-                        }
-                      : { display: "none" }
-                  }
-                  gutterBottom
-                  component="div"
-                >
-                  Selection is required
-                </Typography>
-              </Box>
+                Selection is required
+              </Typography>
             </Box>
-            {/* <Box
+          </Box>
+          {/* <Box
               sx={{
                 width: "100%",
                 display: "flex",
@@ -677,156 +675,156 @@ function HomePage() {
                 </Typography>
               </Box>
             </Box> */}
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              mt: 3,
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={{
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  color: "#666666",
+                  textTransform: "capitalize",
+                  ml: {
+                    sm: 2,
+                  },
+                  fontFamily: "Ubuntu",
+                }}
+                gutterBottom
+                component="div"
+              >
+                Add description
+              </Typography>
+            </Box>
             <Box
               sx={{
                 width: "100%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column",
-                mt: 3,
               }}
             >
-              <Box
-                sx={{
+              <textarea
+                rows="8"
+                required
+                value={TaskDes}
+                onChange={(e) => setTaskDes(e.target.value.toLowerCase())}
+                type="email"
+                style={{
                   width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
+                  height: "100%",
+                  outline: "none",
+                  border: "unset",
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  padding: "0px 4px",
+                  color: "#666666",
+                  borderRadius: "20px",
+                  border: "1px solid #666666",
+                  padding: "10px",
+                  resize: "vertical",
                 }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: "20px",
-                    lineHeight: "28px",
-                    color: "#666666",
-                    textTransform: "capitalize",
-                    ml: {
-                      sm: 2,
-                    },
-                    fontFamily: "Ubuntu",
-                  }}
-                  gutterBottom
-                  component="div"
-                >
-                  Add description
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <textarea
-                  rows="8"
-                  required
-                  value={TaskDes}
-                  onChange={(e) => setTaskDes(e.target.value.toLowerCase())}
-                  type="email"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    outline: "none",
-                    border: "unset",
-                    fontSize: "16px",
-                    lineHeight: "24px",
-                    padding: "0px 4px",
-                    color: "#666666",
-                    borderRadius: "20px",
-                    border: "1px solid #666666",
-                    padding: "10px",
-                    resize: "vertical",
-                  }}
-                  placeholder="Enter description here.."
-                />
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={
-                    Validate
-                      ? {
-                          fontSize: "14px",
-                          lineHeight: "20px",
-                          color: "red",
-                          textTransform: "capitalize",
-                          fontWeight: 400,
-                          ml: 2,
-                          mt: 1,
-                          fontFamily: "Ubuntu",
-                        }
-                      : { display: "none" }
-                  }
-                  gutterBottom
-                  component="div"
-                >
-                  Description is required
-                </Typography>
-              </Box>
+                placeholder="Enter description here.."
+              />
             </Box>
-            <Button
-              onClick={() => AddTask()}
-              variant="contained"
+            <Box
               sx={{
-                textTransform: "capitalize",
-                borderRadius: "30px",
-                fontSize: "16px",
-                px: 4,
-                py: 1,
-                borderColor: "#A2A2A2",
+                width: "100%",
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "start",
                 alignItems: "center",
-                width: "50%",
-                mt: 3,
-                fontFamily: "Ubuntu",
               }}
             >
-              <AddCircleOutlineIcon sx={{ mr: 1 }} />
-              Add task
-            </Button>
+              <Typography
+                variant="h6"
+                sx={
+                  Validate
+                    ? {
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "red",
+                        textTransform: "capitalize",
+                        fontWeight: 400,
+                        ml: 2,
+                        mt: 1,
+                        fontFamily: "Ubuntu",
+                      }
+                    : { display: "none" }
+                }
+                gutterBottom
+                component="div"
+              >
+                Description is required
+              </Typography>
+            </Box>
           </Box>
-          <Box
+          <Button
+            onClick={() => AddTask()}
+            variant="contained"
             sx={{
-              width: {
-                md: "60%",
-                xs: "100%",
-              },
-              px: 2,
+              textTransform: "capitalize",
+              borderRadius: "30px",
+              fontSize: "16px",
+              px: 4,
+              py: 1,
+              borderColor: "#A2A2A2",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mt: 4,
-              flexDirection: "column",
-              mb: 4,
+              width: "50%",
+              mt: 3,
+              fontFamily: "Ubuntu",
             }}
           >
-            <Typography
-              variant="h6"
-              sx={{
-                fontSize: "32px",
-                lineHeight: "40px",
-                color: "#A2A2A2",
-                textTransform: "capitalize",
-                mt: 2,
-                fontFamily: "Ubuntu",
-              }}
-              component="div"
-            >
-              Recent added tasks
-            </Typography>
-            {/* <ul>
+            <AddCircleOutlineIcon sx={{ mr: 1 }} />
+            Add task
+          </Button>
+        </Box>
+        <Box
+          sx={{
+            width: {
+              md: "60%",
+              xs: "100%",
+            },
+            px: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 4,
+            flexDirection: "column",
+            mb: 4,
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontSize: "32px",
+              lineHeight: "40px",
+              color: "#A2A2A2",
+              textTransform: "capitalize",
+              mt: 2,
+              fontFamily: "Ubuntu",
+            }}
+            component="div"
+          >
+            Recent added tasks
+          </Typography>
+          {/* <ul>
             {state.map((list) => {
               return <li key={list.Task} >
                 <Link href={`/tasklist/${list.Task}`}>
@@ -835,107 +833,106 @@ function HomePage() {
               </li>
             })}
           </ul> */}
-            <Box
-              sx={{
-                width: "100%",
-                px: 2,
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                mt: 4,
-                flexDirection: "column",
-              }}
-            >
-              {RecentAddedTask.slice(0, 3).map((list, index) => {
-                return (
-                  <Box
-                    key={index}
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Link href={`/taskdetail/${list.Task}`}>
-                      <a>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            fontSize: "18px",
-                            lineHeight: "24px",
-                            color: "#666666",
-                            textTransform: "capitalize",
-                            fontFamily: "Ubuntu",
-                          }}
-                          gutterBottom
-                          component="div"
-                        >
-                          {list.Task}
-                        </Typography>
-                      </a>
-                    </Link>
-                    <Box>
-                      <IconButton
-                        aria-label="delete"
-                        onClick={() => MarkComplete(index)}
-                        size="medium"
+          <Box
+            sx={{
+              width: "100%",
+              px: 2,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              mt: 4,
+              flexDirection: "column",
+            }}
+          >
+            {RecentAddedTask.slice(0, 3).map((list, index) => {
+              return (
+                <Box
+                  key={index}
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link href={`/taskdetail/${list.Task}`}>
+                    <a>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontSize: "18px",
+                          lineHeight: "24px",
+                          color: "#666666",
+                          textTransform: "capitalize",
+                          fontFamily: "Ubuntu",
+                        }}
+                        gutterBottom
+                        component="div"
                       >
-                        <DoneIcon sx={{ fontSize: "30px", color: "green" }} />
-                      </IconButton>
-                      <IconButton
-                        aria-label="delete"
-                        onClick={() => DeleteTask(index)}
-                        size="medium"
-                      >
-                        <DeleteForeverIcon
-                          sx={{ fontSize: "30px", color: "red" }}
-                        />
-                      </IconButton>
-                    </Box>
+                        {list.Task}
+                      </Typography>
+                    </a>
+                  </Link>
+                  <Box>
+                    <IconButton
+                      aria-label="delete"
+                      onClick={() => MarkComplete(index)}
+                      size="medium"
+                    >
+                      <DoneIcon sx={{ fontSize: "30px", color: "green" }} />
+                    </IconButton>
+                    <IconButton
+                      aria-label="delete"
+                      onClick={() => DeleteTask(index)}
+                      size="medium"
+                    >
+                      <DeleteForeverIcon
+                        sx={{ fontSize: "30px", color: "red" }}
+                      />
+                    </IconButton>
                   </Box>
-                );
-              })}
-            </Box>
+                </Box>
+              );
+            })}
           </Box>
-        </Container>
-        <Box
-          sx={{
-            width: {
-              sm: "500px",
-              xs: "300px",
-            },
-            height: {
-              sm: "500px",
-              xs: "300px",
-            },
-            mt: 8,
-          }}
-        >
-          <Pie
-            data={{
-              labels: ["Completed", "Pending"],
-              datasets: [
-                {
-                  label: "Dataset",
-                  data: [CompletedTask(), PendingTask()],
-                  backgroundColor: ["lightgreen", "#1976d2"],
-                },
-              ],
-            }}
-            options={{
-              maintainAspectRatio: false,
-              plugins: {
-                legend: {
-                  // display: false
-                  position: "bottom",
-                },
-              },
-            }}
-          />
         </Box>
+      </Container>
+      <Box
+        sx={{
+          width: {
+            sm: "500px",
+            xs: "300px",
+          },
+          height: {
+            sm: "500px",
+            xs: "300px",
+          },
+          mt: 8,
+        }}
+      >
+        <Pie
+          data={{
+            labels: ["Completed", "Pending"],
+            datasets: [
+              {
+                label: "Dataset",
+                data: [CompletedTask(), PendingTask()],
+                backgroundColor: ["lightgreen", "#1976d2"],
+              },
+            ],
+          }}
+          options={{
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                // display: false
+                position: "bottom",
+              },
+            },
+          }}
+        />
       </Box>
-    </Zoom>
+    </Box>
   );
 }
 
